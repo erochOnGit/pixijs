@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<script src="pixi.min.js"></script>
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+    var type = "WebGL"
+    if(!PIXI.utils.isWebGLSupported()){
+        type = "canvas"
+    }
+
+    PIXI.utils.sayHello(type)
+
+    var container = document.getElementById('container')
+//    var containerWidth = container.clientWidth;
+//    var containerHeight = container.getAttribute('height');
+
+    //Create the renderer
+    var renderer = PIXI.autoDetectRenderer(800, 600,{antialias: false, transparent: false, resolution: 1});
+
+    //Add the canvas to the HTML document
+    container.appendChild(renderer.view);
+
+    //Create a container object called the `stage`
+    var stage = new PIXI.Container();
+
+    //The renderer.view object is just a plain old ordinary <canvas> object
+    renderer.view.id = 'renderer'
+
+    //Tell the `renderer` to `render` the `stage`
+    renderer.render(stage);
+</script>
+</body>
+</html>

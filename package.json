@@ -4,7 +4,11 @@
   "description": "",
   "main": "nodeExemple.js",
   "dependencies": {
-    "express": "^4.15.4"
+    "apollo-server-express": "^1.1.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "graphql": "^0.11.2",
+    "graphql-tools": "^1.2.2"
   },
   "devDependencies": {},
   "scripts": {
